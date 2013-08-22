@@ -27,8 +27,8 @@
         "incenteev/composer-parameter-handler": "~2.0",
 
         "muchomasfacil/InPageEditBundle": "dev-master",
-        "stof/doctrine-extensions-bundle": "~1.1@dev"
-
+        "stof/doctrine-extensions-bundle": "~1.1@dev",
+        "friendsofsymfony/jsrouting-bundle": "~1.1"        
     },
     "scripts": {
         "post-install-cmd": [

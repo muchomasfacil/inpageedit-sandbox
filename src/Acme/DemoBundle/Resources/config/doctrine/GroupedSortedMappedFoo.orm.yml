@@ -1,0 +1,21 @@
+Acme\DemoBundle\Entity\GroupedSortedMappedFoo:
+    type: entity
+    table: null
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        date:
+            type: date
+        header:
+            type: string
+            length: 255
+        text:
+            type: text
+
+        #next fields are what makes a grouped, sorted, mapped entity
+        ipe_handler: {type: string, length: 255, gedmo: ['sortableGroup']}
+        ipe_position: {type: integer, gedmo: ['sortablePosition']}
+    lifecycleCallbacks: {  }

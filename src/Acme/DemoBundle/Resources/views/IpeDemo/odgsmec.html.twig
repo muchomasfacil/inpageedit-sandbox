@@ -1,0 +1,42 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% block head %}
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" type="text/css" rel="stylesheet" media="screen" />    
+    {{ parent() }}    
+{% endblock %}
+
+{% block title "InPageEditBundle demo page: orm_doctrine_grouped_sorted_mapped_entity_collection" %}
+
+{% block content %}
+    <h1>InPageEditBundle demo page: orm_doctrine_grouped_sorted_mapped_entity_collection</h1>
+
+    {{ include('AcmeDemoBundle:IpeDemo:_shared_content.html.twig') }}
+    
+    <h2>Using orm_doctrine_grouped_sorted_mapped_entity_collection (alias: odgsmec) to manage a <strong>single</strong> grouped sorted mapped Entity</h2>
+    {% set find_params = {'find_by': {'ipe_handler': 'item_collection'}, 'entity_class': 'AcmeDemoBundle:GroupedSortedMappedFoo', 'is_collection': false} %}
+    {{ ipe_render('odgsmec', find_params, 'AcmeDemoBundle:IpeDemo:_foo.html.twig') }}
+
+    <h2>Using orm_doctrine_grouped_sorted_mapped_entity_collection (alias: odgsmec) to manage a grouped sorted mapped collection of Entities</h2>
+    {% set find_params = {'find_by': {'ipe_handler': 'item_collection'}, 'entity_class': 'AcmeDemoBundle:GroupedSortedMappedFoo', 'is_collection': true} %}
+    {{ ipe_render('odgsmec', find_params, 'AcmeDemoBundle:IpeDemo:_odgsmec_foo.html.twig', {'max_collection_length': 6, 'list_to_string_method': 'getHeader'}) }}
+    
+    {# it is not required the use of assetic but as we get a bunch of external libraries... #}
+    {% javascripts
+        'http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js'
+        'http://rawgithub.com/jquery/jquery-ui/1.10.2/ui/jquery.ui.core.js'
+        'http://rawgithub.com/jquery/jquery-ui/1.10.2/ui/jquery.ui.widget.js'
+        'http://rawgithub.com/jquery/jquery-ui/1.10.2/ui/jquery.ui.mouse.js'
+        'http://rawgithub.com/jquery/jquery-ui/1.10.2/ui/jquery.ui.sortable.js'
+        'http://rawgithub.com/malsup/blockui/master/jquery.blockUI.js'
+        'http://rawgithub.com/malsup/form/master/jquery.form.js'
+        'http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js'
+    %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script type="text/javascript" src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+    <script type="text/javascript" src="{{ path('_ipe_mmf_ajax_modal_helper') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/muchomasfacilinpageedit/js/ipe.js') }}"></script>
+{% endblock %}
+
+{% set code = code(_self) %}

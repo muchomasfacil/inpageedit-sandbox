@@ -10,3 +10,27 @@ _demo:
     resource: "@AcmeDemoBundle/Controller/DemoController.php"
     type:     annotation
     prefix:   /demo
+
+# newxt routes needed for the InPageEditDemoBundle
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+_ipe_demo_odme:    
+    pattern:  /ipe_demo_odme
+    defaults: { _controller: AcmeDemoBundle:IpeDemo:odme }
+
+_ipe_demo_odme_without_controller:
+    path: /ipe_demo_odme_without_controller
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: 'AcmeDemoBundle:IpeDemo:static_odme.html.twig'        
+
+_ipe_demo_odgsmec:    
+    pattern:  /ipe_demo_odgsmec
+    defaults: { _controller: AcmeDemoBundle:IpeDemo:odgsmec }
+
+_ipe_demo_odgsmec_without_controller:
+    path: /ipe_demo_odgsmec_without_controller
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: 'AcmeDemoBundle:IpeDemo:static_odgsmec.html.twig'                

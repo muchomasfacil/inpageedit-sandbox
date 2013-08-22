@@ -11,4 +11,18 @@
         <li><a href="{{ path('_demo_secured_hello', {'name': 'World'}) }}">Access the secured area</a> <a href="{{ path('_demo_login') }}">Go to the login page</a></li>
         {# <li><a href="{{ path('_demo_contact') }}">Send a Message</a></li> #}
     </ul>
+    
+    <h2>InPageEditBundle demos</h2>
+    <ul id="demo-list">
+        <li>
+                Using orm_doctrine_mapped_entity (alias: odme) to manage a collection of standard entities<br>
+                <a href="{{ path('_ipe_demo_odme') }}">Go</a>  <a href="{{ path('_ipe_demo_odme_without_controller') }}">Go (without controller!!)</a>
+        </li>
+
+        <li>
+                Using orm_doctrine_grouped_sorted_mapped_entity_collection (alias: odgsmec) to managed a collection of Entities grouped by an ipe_handler field and sorted by an ipe_position field (uses sortable DoctrineExtension)<br>
+                <a href="{{ path('_ipe_demo_odgsmec') }}">Go</a>  <a href="{{ path('_ipe_demo_odgsmec_without_controller') }}">Go (without controller!!)</a>
+        </li>
+    
+    </ul>
 {% endblock %}
