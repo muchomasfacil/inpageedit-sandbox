@@ -1,0 +1,2 @@
+ipe_routes:
+    resource: "@MuchoMasFacilInPageEditBundle/Resources/config/routing.yml"
