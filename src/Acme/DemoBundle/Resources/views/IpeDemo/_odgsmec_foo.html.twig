@@ -1,4 +1,10 @@
 {% for entry in object %}
+<ul>
+    <li><strong>ipe_handler</strong>: {{ entry.ipeHandler }}</li>
+    <li><strong>ipe_position</strong>: {{ entry.ipePosition }}</li>
+</ul>
+
 {{ include('AcmeDemoBundle:IpeDemo:_foo.html.twig', {'object': entry}) }}
-{# or write your own code#}
+{# or write your own code #}
+
 {% endfor %}

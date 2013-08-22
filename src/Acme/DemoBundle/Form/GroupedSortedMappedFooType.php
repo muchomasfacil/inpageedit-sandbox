@@ -14,8 +14,8 @@ class GroupedSortedMappedFooType extends AbstractType
             ->add('date')
             ->add('header')
             ->add('text')
-            //->add('ipe_handler', 'hidden')
-            //->add('ipe_position', 'hidden')
+            ->add('ipe_handler', 'hidden')
+            ->add('ipe_position', 'hidden')
         ;
     }
 

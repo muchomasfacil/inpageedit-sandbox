@@ -16,7 +16,7 @@
     {% for foo in foos %}
         {{ ipe_render('odme', foo, 'AcmeDemoBundle:IpeDemo:_foo.html.twig') }}
     {% endfor %}
-
+    
     {# it is not required the use of assetic but as we get a bunch of external libraries... #}
     {% javascripts
         'http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js'

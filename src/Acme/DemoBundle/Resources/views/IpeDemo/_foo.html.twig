@@ -1,9 +1,9 @@
+{% if object %}
 <ul>
-{% if object.id is defined %}
     <li><strong>Id</strong>: {{ object.id }}</li>
-{% endif %}    
     <li><strong>Header</strong>: {{ object.header }}</li>
     <li><strong>Date</strong>: {{ object.date|date('Y/m/d') }}</li>
     <li><strong>Text</strong>: {{ object.text }}</li>
 </ul>
 <hr>
+{% endif %}    
