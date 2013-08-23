@@ -24,15 +24,13 @@
         'http://rawgithub.com/jquery/jquery-ui/1.10.2/ui/jquery.ui.widget.js'
         'http://rawgithub.com/jquery/jquery-ui/1.10.2/ui/jquery.ui.mouse.js'
         'http://rawgithub.com/jquery/jquery-ui/1.10.2/ui/jquery.ui.sortable.js'
-        'http://rawgithub.com/malsup/blockui/master/jquery.blockUI.js'
         'http://rawgithub.com/malsup/form/master/jquery.form.js'
         'http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js'
+        'http://rawgithub.com/malsup/blockui/master/jquery.blockUI.js'
     %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
-    <script type="text/javascript" src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
-    <script type="text/javascript" src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
-    <script type="text/javascript" src="{{ path('_ipe_mmf_ajax_modal_helper') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/muchomasfacilinpageedit/js/jquery.htmlAjaxHelper.js') }}"></script>
     <script type="text/javascript" src="{{ asset('bundles/muchomasfacilinpageedit/js/ipe.js') }}"></script>
 {% endblock %}
 
