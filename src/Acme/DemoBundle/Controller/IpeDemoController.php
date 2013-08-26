@@ -3,14 +3,13 @@
 namespace Acme\DemoBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\SecurityContext;
 
 class IpeDemoController extends Controller
 {
-
-    //\Doctrine\Common\Util\Debug::dump($foos);    
-
     public function odmeAction()
-    {        
+    {
         $render_vars = array();
 
         //check if we have a ?ipe_fake in our url
@@ -31,7 +30,7 @@ class IpeDemoController extends Controller
     }
 
     public function odgsmecAction()
-    {        
+    {
         $render_vars = array();
 
         //check if we have a ?ipe_fake in our url
@@ -41,9 +40,9 @@ class IpeDemoController extends Controller
 
         //this fakes(if you have entered an ?ipe_fake in the url) items for a grouped sorted mapped Entity collection with an ipe_handler that we have name item_collection (could be any name you choose)
         $foos = $faker->findOrFakeGroupedSortedMappedEntity('AcmeDemoBundle:GroupedSortedMappedFoo', 'item_collection', rand(3,5), $ipe_fake);
-        //this fakes(if you have entered an ?ipe_fake in the url) grouped sorted mapped Entity collection with a single item with an ipe_handler that we have name single_item (could be any name you choose)        
+        //this fakes(if you have entered an ?ipe_fake in the url) grouped sorted mapped Entity collection with a single item with an ipe_handler that we have name single_item (could be any name you choose)
         $single_foo = $faker->findOrFakeSingleGroupedMappedEntity('AcmeDemoBundle:GroupedSortedMappedFoo', 'single_item', $ipe_fake);
-        
+
 
         return $this->render('AcmeDemoBundle:IpeDemo:odgsmec.html.twig', $render_vars);
     }

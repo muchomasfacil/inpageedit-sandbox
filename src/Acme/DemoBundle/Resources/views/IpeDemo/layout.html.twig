@@ -1,0 +1,38 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% block head %}
+
+{% if is_granted('ROLE_IPE_EDITOR') %}
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" type="text/css" rel="stylesheet" media="screen" />
+{% endif %}
+    {{ parent() }}
+
+{% endblock %}
+
+
+{% block content_header_more %}
+    {{ parent() }}
+    <li>logged in as <strong>{{ app.user ? app.user.username : 'Anonymous' }}</strong> - <a href="{{ path('_demo_logout') }}">Logout</a></li>
+{% endblock %}
+
+{% block content %}
+
+{% if is_granted('ROLE_IPE_EDITOR') %}
+{# it is not required the use of assetic but as we get a bunch of external libraries... #}
+    {% javascripts
+        'http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js'
+        'http://rawgithub.com/jquery/jquery-ui/1.10.2/ui/jquery.ui.core.js'
+        'http://rawgithub.com/jquery/jquery-ui/1.10.2/ui/jquery.ui.widget.js'
+        'http://rawgithub.com/jquery/jquery-ui/1.10.2/ui/jquery.ui.mouse.js'
+        'http://rawgithub.com/jquery/jquery-ui/1.10.2/ui/jquery.ui.sortable.js'
+        'http://rawgithub.com/malsup/form/master/jquery.form.js'
+        'http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js'
+        'http://rawgithub.com/malsup/blockui/master/jquery.blockUI.js'
+    %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/muchomasfacilinpageedit/js/jquery.htmlAjaxHelper.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/muchomasfacilinpageedit/js/ipe.js') }}"></script>
+{% endif %}
+
+{% endblock %}

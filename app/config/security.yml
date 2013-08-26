@@ -11,7 +11,7 @@ security:
             memory:
                 users:
                     user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN', 'ROLE_IPE_EDITOR' ] }
 
     firewalls:
         dev:
@@ -22,7 +22,21 @@ security:
             pattern:  ^/demo/secured/login$
             security: false
 
+        ipe_demo:
+            context: primary_auth
+            pattern: ^/ipe_demo/|^/ipe/
+            # form_login:
+            #     check_path: _ipe_demo_security_check
+            #     login_path: _ipe_demo_login
+            #     default_target_path: _demo
+            # logout:
+            #     path:   _ipe_demo_logout
+            #     target: _demo
+
+            anonymous: ~
+
         secured_area:
+            context: primary_auth
             pattern:    ^/demo/secured/
             form_login:
                 check_path: _security_check
@@ -31,8 +45,8 @@ security:
                 path:   _demo_logout
                 target: _demo
             #anonymous: ~
-            #http_basic:
-            #    realm: "Secured Demo Area"
+
+
 
     access_control:
         - { path: ^/demo/secured/hello/admin/, roles: ROLE_ADMIN }
