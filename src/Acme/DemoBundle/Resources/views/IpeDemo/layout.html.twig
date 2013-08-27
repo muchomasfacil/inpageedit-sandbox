@@ -9,6 +9,12 @@
 
 {% endblock %}
 
+{% block body_start %}
+{% if is_granted('ROLE_IPE_EDITOR') %}
+    {{ include('MuchoMasFacilInPageEditBundle:IPE:_navbar.html.twig') }}
+{% endif %}
+{% endblock %}
+
 
 {% block content_header_more %}
     {{ parent() }}

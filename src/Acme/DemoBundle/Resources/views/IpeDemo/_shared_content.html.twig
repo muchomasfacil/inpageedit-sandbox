@@ -1,12 +1,17 @@
+{% if is_granted('ROLE_IPE_EDITOR') %}
     <div class="alert alert-block">
         <p><strong>Warning!</strong> You see style changes from the standard AcmeDemoBundle<br>
         This is due to including bootstrap after the standard styles so it overwrites some defaults</p>
         <p>InPageEditBundle makes use of bootstrap 2.3.2 css, and js. If you mixing bootstrap with other css frameworks must be done with care</p>
+        <p>I should have been avoid by a more care css treatment</p>
         <p><strong>Using InPageEditBundle with bootstrap based themes or layouts garanties optimal behaviour!!</strong></p>
     </div>
-
-    <p>Check if the user is logged or not, suggest login page</p>
-
-    <p>Show page with no content, suggest add ?faker to url</p>
-
-    <p>Suggest edition, double click...</p>
+    <p>Now you can click on edit boxes to see the Edit In Page in action!!!!<p>
+    <div class="alert alert-block alert-info">
+        <p>Take a look at the controller code. If you have no entries created, if you add <strong>?ipe_fake</strong> to the url they will be faked for you!!</p>
+    </div>
+{% else %}
+    <p>You are watching the page as a normal user. Nothing new here</p>
+    <p>Go to <a href="{{ path('_demo_login') }}">the login page</a>, login with a ROLE_IPE_EDITOR user (admin/adminpass) then come back here.</p>
+    <p>You will see the Edit In Page in action</p>
+{% endif %}    
