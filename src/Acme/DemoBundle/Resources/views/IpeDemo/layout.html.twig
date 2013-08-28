@@ -11,7 +11,11 @@
 
 {% block body_start %}
 {% if is_granted('ROLE_IPE_EDITOR') %}
-    {{ include('MuchoMasFacilInPageEditBundle:IPE:_navbar.html.twig') }}
+<div id="ipe-navbar">
+    {# render(controller('MuchoMasFacilInPageEditBundle:IPE:_navbar', {'locale': my_custom_ipe_locale, 'template': my_custom_navbar_template})) #}
+    {{ render(controller('MuchoMasFacilInPageEditBundle:IPE:_navbar', {})) }}
+</div>
+
 {% endif %}
 {% endblock %}
 
