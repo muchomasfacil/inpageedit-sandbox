@@ -1,6 +1,6 @@
 {% extends "AcmeDemoBundle:IpeDemo:layout.html.twig" %}
 
-{% block title "InPageEditBundle demo page" %}
+{% block title_borrame "InPageEditBundle demo page" %}
 
 {% block content %}
     <h1>InPageEditBundle demo page</h1>
@@ -9,7 +9,11 @@
 
     <h2>Using orm_doctrine_mapped_entity (alias: odme) to walk a collection of Entities</h2>
     {% for foo in foos %}
-        {{ ipe_render('odme', foo, 'AcmeDemoBundle:IpeDemo:_foo.html.twig') }}
+    {#
+        {% set find_params = {'find_by': {'id': foo.id}, 'entity_class': 'AcmeDemoBundle:Foo'} %}
+        {{ ipe_render('odme', find_params, 'AcmeDemoBundle:IpeDemo:_foo.html.twig') }}
+        #}
+        {{ ipe_render_odme(foo, 'AcmeDemoBundle:IpeDemo:_foo.html.twig') }}
     {% endfor %}
 
     {{ parent() }}

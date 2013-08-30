@@ -82,3 +82,18 @@ stof_doctrine_extensions:
         default:
             sortable: true
             uploadable: true
+
+mucho_mas_facil_in_page_edit:
+    # definitions: 
+    #     orm_doctrine_mapped_entity:
+    #         find_params: 
+    #             other_entry: whatever
+    #             find_by: alvaro
+    #         params: 
+    #             some more: asfda
+    #             editor_roles: []
+    #message_catalog: messages
+    available_langs:
+        en: {label: English}
+        #es: {label: Español}
+

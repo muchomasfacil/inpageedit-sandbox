@@ -1,6 +1,6 @@
 {% extends "AcmeDemoBundle:IpeDemo:layout.html.twig" %}
 
-{% block title "InPageEditBundle demo page: orm_doctrine_grouped_sorted_mapped_entity_collection" %}
+{% block title_borrame "InPageEditBundle demo page: orm_doctrine_grouped_sorted_mapped_entity_collection" %}
 
 {% block content %}
     <h1>InPageEditBundle demo page: orm_doctrine_grouped_sorted_mapped_entity_collection</h1>
@@ -8,13 +8,17 @@
     {{ include('AcmeDemoBundle:IpeDemo:_shared_content.html.twig') }}
 
     <h2>Using orm_doctrine_grouped_sorted_mapped_entity_collection (alias: odgsmec) to manage a <strong>single</strong> grouped sorted mapped Entity</h2>
-    {% set find_params = {'find_by': {'ipe_handler': 'single_item'}, 'entity_class': 'AcmeDemoBundle:GroupedSortedMappedFoo', 'is_collection': false} %}
+    {#{% set find_params = {'find_by': {'ipe_handler': 'single_item'}, 'entity_class': 'AcmeDemoBundle:GroupedSortedMappedFoo', 'is_collection': false} %}
     {{ ipe_render('odgsmec', find_params, 'AcmeDemoBundle:IpeDemo:_foo.html.twig') }}
+    #}
+    {{ ipe_render_odgsme('single_item', 'AcmeDemoBundle:GroupedSortedMappedFoo', 'AcmeDemoBundle:IpeDemo:_foo.html.twig') }}
 
     <h2>Using orm_doctrine_grouped_sorted_mapped_entity_collection (alias: odgsmec) to manage a grouped sorted mapped collection of Entities</h2>
+    {#
     {% set find_params = {'find_by': {'ipe_handler': 'item_collection'}, 'entity_class': 'AcmeDemoBundle:GroupedSortedMappedFoo', 'is_collection': true} %}
     {{ ipe_render('odgsmec', find_params, 'AcmeDemoBundle:IpeDemo:_odgsmec_foo.html.twig', {'max_collection_length': 6, 'list_to_string_method': 'getHeader'}) }}
-
+    #}
+    {{ ipe_render_odgsme_collection('item_collection', 'AcmeDemoBundle:GroupedSortedMappedFoo', 'AcmeDemoBundle:IpeDemo:_odgsmec_foo.html.twig') }}
     {{ parent() }}
 {% endblock %}
 

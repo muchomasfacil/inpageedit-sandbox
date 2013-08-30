@@ -1,5 +1,7 @@
 {% extends "AcmeDemoBundle::layout.html.twig" %}
 
+{% block title %}{{ ipe_od_title_tag(app.request) }}{% endblock title %}    
+
 {% block head %}
 
 {% if is_granted('ROLE_IPE_EDITOR') %}
@@ -7,23 +9,23 @@
 {% endif %}
     {{ parent() }}
 
-{% endblock %}
+{% endblock head %}
 
 {% block body_start %}
 {% if is_granted('ROLE_IPE_EDITOR') %}
 <div id="ipe-navbar">
     {# render(controller('MuchoMasFacilInPageEditBundle:IPE:_navbar', {'locale': my_custom_ipe_locale, 'template': my_custom_navbar_template})) #}
-    {{ render(controller('MuchoMasFacilInPageEditBundle:IPE:_navbar', {})) }}
+    {{ render(controller('MuchoMasFacilInPageEditBundle:IPE:_navbar', {'root_request': app.request})) }}
 </div>
 
 {% endif %}
-{% endblock %}
+{% endblock body_start %}
 
 
 {% block content_header_more %}
     {{ parent() }}
     <li>logged in as <strong>{{ app.user ? app.user.username : 'Anonymous' }}</strong> - <a href="{{ path('_demo_logout') }}">Logout</a></li>
-{% endblock %}
+{% endblock content_header_more %}
 
 {% block content %}
 
@@ -45,4 +47,4 @@
     <script type="text/javascript" src="{{ asset('bundles/muchomasfacilinpageedit/js/ipe.js') }}"></script>
 {% endif %}
 
-{% endblock %}
+{% endblock content %}
