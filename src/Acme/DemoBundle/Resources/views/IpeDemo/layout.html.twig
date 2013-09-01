@@ -1,12 +1,14 @@
 {% extends "AcmeDemoBundle::layout.html.twig" %}
 
-{% block title %}{{ ipe_title_tag_od(app.request) }}{% endblock title %}
+{% block title %}{{ ipe_title_tag_od(app.request, (add_query_params is defined)? add_query_params: false, {}, false) }}{% endblock title %}
 
 {% block head %}
 
-{% if is_granted('ROLE_IPE_EDITOR') %}
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" type="text/css" rel="stylesheet" media="screen" />
-{% endif %}
+    {% block metas %}{{ ipe_meta_tags_od(app.request, (add_query_params is defined)? add_query_params: false, {}, false) }}{% endblock metas %}
+
+    {% if is_granted('ROLE_IPE_EDITOR') %}
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" type="text/css" rel="stylesheet" media="screen" />
+    {% endif %}
     {{ parent() }}
 
 {% endblock head %}
