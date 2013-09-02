@@ -10,6 +10,14 @@ class IpeDemoController extends Controller
 {
     public function odmeAction()
     {
+
+        if (is_object($this->container->get('security.context')->getToken())) {
+             $provider_key = $this->container->get('security.context')->getToken()->getProviderKey();
+
+             $final_url = $this->container->get('router')->generate('_demo_logout');
+             print_r($this->container->getParameter('security'));
+        }
+
         $render_vars = array();
 
         //check if we have a ?ipe_fake in our url
@@ -30,7 +38,7 @@ class IpeDemoController extends Controller
     }
 
     public function odgsmecAction()
-    {                
+    {
         $render_vars = array();
 
         //check if we have a ?ipe_fake in our url
