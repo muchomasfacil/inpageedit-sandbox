@@ -6,6 +6,7 @@ app/logs/*
 app/Resources/sqlite/*
 vendor/*
 web/bundles/*
+web/assetic/*
 web/css/*
 web/js/*
 web/uploads/*
