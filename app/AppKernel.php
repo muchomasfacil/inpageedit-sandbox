@@ -17,8 +17,13 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
+            // Required by MuchoMasFacilInPageEditBundle
             new MuchoMasFacil\InPageEditBundle\MuchoMasFacilInPageEditBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+
+            // Required by the sandbox
+            new MuchoMasFacil\WysiwygBundle\MuchoMasFacilWysiwygBundle(),
+            
 
         );
 

@@ -10,6 +10,10 @@
         {
             "type": "vcs",
             "url": "git@github.com:muchomasfacil/InPageEditBundle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:muchomasfacil/WysiwygBundle.git"
         }
     ],
     "require": {
@@ -27,8 +31,9 @@
         "incenteev/composer-parameter-handler": "~2.0",
 
         "muchomasfacil/InPageEditBundle": "dev-master",
-        "stof/doctrine-extensions-bundle": "~1.1@dev",
-        "friendsofsymfony/jsrouting-bundle": "~1.1"        
+        "stof/doctrine-extensions-bundle": "~1.1@dev", 
+
+        "muchomasfacil/WysiwygBundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

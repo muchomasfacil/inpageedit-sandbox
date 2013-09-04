@@ -1,2 +1,5 @@
 ipe_routes:
     resource: "@MuchoMasFacilInPageEditBundle/Resources/config/routing.yml"
+
+wysiwyg_route:
+     resource: "@MuchoMasFacilWysiwygBundle/Resources/config/routing.yml"    
