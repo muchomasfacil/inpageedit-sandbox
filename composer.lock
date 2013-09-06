@@ -151,12 +151,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "bcb53776a096a0c64579cc8d8ec0db62f1109fbc"
+                "reference": "623caf42551b416460df786154d89bc50e3d1798"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/bcb53776a096a0c64579cc8d8ec0db62f1109fbc",
-                "reference": "bcb53776a096a0c64579cc8d8ec0db62f1109fbc",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/623caf42551b416460df786154d89bc50e3d1798",
+                "reference": "623caf42551b416460df786154d89bc50e3d1798",
                 "shasum": ""
             },
             "require": {
@@ -197,7 +197,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -210,7 +210,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2013-08-29 16:56:45"
+            "time": "2013-07-23 08:27:26"
         },
         {
             "name": "doctrine/common",
@@ -615,17 +615,71 @@
             "time": "2013-08-20 08:02:51"
         },
         {
+            "name": "friendsofsymfony/jsrouting-bundle",
+            "version": "1.2.0",
+            "target-dir": "FOS/JsRoutingBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfSymfony/FOSJsRoutingBundle.git",
+                "reference": "b93f01e8f81918bd86fc673afaaf26e5fc51b3ae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSJsRoutingBundle/zipball/b93f01e8f81918bd86fc673afaaf26e5fc51b3ae",
+                "reference": "b93f01e8f81918bd86fc673afaaf26e5fc51b3ae",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/console": "~2.0",
+                "symfony/framework-bundle": "~2.0",
+                "symfony/serializer": "~2.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "FOS\\JsRoutingBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "william.durand1@gmail.com",
+                    "homepage": "http://www.willdurand.fr"
+                },
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/friendsofsymfony/FOSJsRoutingBundle/contributors"
+                }
+            ],
+            "description": "Symfony FOSJsRoutingBundle",
+            "homepage": "http://friendsofsymfony.github.com",
+            "keywords": [
+                "Js Routing"
+            ],
+            "time": "2013-07-15 09:21:37"
+        },
+        {
             "name": "fzaninotto/faker",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "fd3e757671a4f589873904a78381c87e2b631ab4"
+                "reference": "feb6492762a77db946bc13cc44a20a01546be0e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/fd3e757671a4f589873904a78381c87e2b631ab4",
-                "reference": "fd3e757671a4f589873904a78381c87e2b631ab4",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/feb6492762a77db946bc13cc44a20a01546be0e6",
+                "reference": "feb6492762a77db946bc13cc44a20a01546be0e6",
                 "shasum": ""
             },
             "require": {
@@ -658,7 +712,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2013-09-02 15:40:56"
+            "time": "2013-08-12 10:05:47"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -666,12 +720,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/l3pp4rd/DoctrineExtensions.git",
-                "reference": "524bdcb8003cdf47262e30ab53c7d5a6a595ea02"
+                "reference": "709c1fc4614e3738e2ca08ec5236af2cd36dcc42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/l3pp4rd/DoctrineExtensions/zipball/524bdcb8003cdf47262e30ab53c7d5a6a595ea02",
-                "reference": "524bdcb8003cdf47262e30ab53c7d5a6a595ea02",
+                "url": "https://api.github.com/repos/l3pp4rd/DoctrineExtensions/zipball/709c1fc4614e3738e2ca08ec5236af2cd36dcc42",
+                "reference": "709c1fc4614e3738e2ca08ec5236af2cd36dcc42",
                 "shasum": ""
             },
             "require": {
@@ -738,7 +792,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2013-09-01 18:48:56"
+            "time": "2013-08-19 15:37:45"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -747,12 +801,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Incenteev/ParameterHandler.git",
-                "reference": "bc06242a63298affc72d2089f93d8986a6217c4c"
+                "reference": "d76d17d14abfaa5103342a43cfeb4126000abab6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Incenteev/ParameterHandler/zipball/bc06242a63298affc72d2089f93d8986a6217c4c",
-                "reference": "bc06242a63298affc72d2089f93d8986a6217c4c",
+                "url": "https://api.github.com/repos/Incenteev/ParameterHandler/zipball/d76d17d14abfaa5103342a43cfeb4126000abab6",
+                "reference": "d76d17d14abfaa5103342a43cfeb4126000abab6",
                 "shasum": ""
             },
             "require": {
@@ -790,7 +844,7 @@
             "keywords": [
                 "parameters management"
             ],
-            "time": "2013-09-03 08:29:03"
+            "time": "2013-07-20 18:35:49"
         },
         {
             "name": "jdorn/sql-formatter",
@@ -798,12 +852,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jdorn/sql-formatter.git",
-                "reference": "7045fde3163d5a4ea6ec32e409a7dcf00779e204"
+                "reference": "bccca26bfe75b30aba71c2f734e9f9dd854a85f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jdorn/sql-formatter/zipball/7045fde3163d5a4ea6ec32e409a7dcf00779e204",
-                "reference": "7045fde3163d5a4ea6ec32e409a7dcf00779e204",
+                "url": "https://api.github.com/repos/jdorn/sql-formatter/zipball/bccca26bfe75b30aba71c2f734e9f9dd854a85f6",
+                "reference": "bccca26bfe75b30aba71c2f734e9f9dd854a85f6",
                 "shasum": ""
             },
             "require": {
@@ -840,7 +894,7 @@
                 "highlight",
                 "sql"
             ],
-            "time": "2013-09-02 17:19:28"
+            "time": "2013-07-11 13:51:14"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -848,12 +902,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "1d671c54f147ece319642132330927672b6190a7"
+                "reference": "v1.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/1d671c54f147ece319642132330927672b6190a7",
-                "reference": "1d671c54f147ece319642132330927672b6190a7",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/v1.1.2",
+                "reference": "v1.1.2",
                 "shasum": ""
             },
             "require": {
@@ -911,7 +965,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2013-09-03 12:44:05"
+            "time": "2013-07-19 00:03:27"
         },
         {
             "name": "monolog/monolog",
@@ -919,12 +973,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "1518320bec1f1583a0c514491528d171501dc781"
+                "reference": "7a8844d4db868cf20040facb8c3413802dd0ec9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1518320bec1f1583a0c514491528d171501dc781",
-                "reference": "1518320bec1f1583a0c514491528d171501dc781",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/7a8844d4db868cf20040facb8c3413802dd0ec9b",
+                "reference": "7a8844d4db868cf20040facb8c3413802dd0ec9b",
                 "shasum": ""
             },
             "require": {
@@ -973,7 +1027,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2013-09-02 10:24:25"
+            "time": "2013-08-09 12:12:38"
         },
         {
             "name": "muchomasfacil/InPageEditBundle",
@@ -982,12 +1036,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/muchomasfacil/InPageEditBundle.git",
-                "reference": "a560282d5549b7d58dce772089409ff4b1715e0b"
+                "reference": "3fcde8726b53e064e97944146f661ff41962a9f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muchomasfacil/InPageEditBundle/zipball/a560282d5549b7d58dce772089409ff4b1715e0b",
-                "reference": "a560282d5549b7d58dce772089409ff4b1715e0b",
+                "url": "https://api.github.com/repos/muchomasfacil/InPageEditBundle/zipball/3fcde8726b53e064e97944146f661ff41962a9f5",
+                "reference": "3fcde8726b53e064e97944146f661ff41962a9f5",
                 "shasum": ""
             },
             "require": {
@@ -1017,7 +1071,7 @@
                 "source": "https://github.com/muchomasfacil/InPageEditBundle/tree/master",
                 "issues": "https://github.com/muchomasfacil/InPageEditBundle/issues"
             },
-            "time": "2013-09-02 17:53:05"
+            "time": "2013-08-22 06:06:39"
         },
         {
             "name": "muchomasfacil/WysiwygBundle",
@@ -1026,13 +1080,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/muchomasfacil/WysiwygBundle.git",
-                "reference": "2cb5e9d6c174e46de8155a1bb893168b05c1a996"
+                "reference": "5991d2c586d81057d44d668e7c80d0211c329c27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muchomasfacil/WysiwygBundle/zipball/2cb5e9d6c174e46de8155a1bb893168b05c1a996",
-                "reference": "2cb5e9d6c174e46de8155a1bb893168b05c1a996",
+                "url": "https://api.github.com/repos/muchomasfacil/WysiwygBundle/zipball/5991d2c586d81057d44d668e7c80d0211c329c27",
+                "reference": "5991d2c586d81057d44d668e7c80d0211c329c27",
                 "shasum": ""
+            },
+            "require": {
+                "friendsofsymfony/jsrouting-bundle": "~1.1"
             },
             "type": "symfony-bundle",
             "autoload": {
@@ -1054,7 +1111,7 @@
                 "source": "https://github.com/muchomasfacil/WysiwygBundle/tree/master",
                 "issues": "https://github.com/muchomasfacil/WysiwygBundle/issues"
             },
-            "time": "2013-09-04 06:56:38"
+            "time": "2013-09-06 05:41:00"
         },
         {
             "name": "psr/log",
@@ -1242,12 +1299,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/stof/StofDoctrineExtensionsBundle.git",
-                "reference": "fe3f6551a41d0bce874159fd4c46296fdd697d2b"
+                "reference": "6577f2388abeac4896aa0aef37fc1b6f2c6923e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stof/StofDoctrineExtensionsBundle/zipball/fe3f6551a41d0bce874159fd4c46296fdd697d2b",
-                "reference": "fe3f6551a41d0bce874159fd4c46296fdd697d2b",
+                "url": "https://api.github.com/repos/stof/StofDoctrineExtensionsBundle/zipball/6577f2388abeac4896aa0aef37fc1b6f2c6923e9",
+                "reference": "6577f2388abeac4896aa0aef37fc1b6f2c6923e9",
                 "shasum": ""
             },
             "require": {
@@ -1295,7 +1352,7 @@
                 "translatable",
                 "tree"
             ],
-            "time": "2013-08-27 13:42:00"
+            "time": "2013-06-25 08:05:01"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1576,12 +1633,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "eb9571e2b082c042cc0b7e46b001cf1d84b8b73a"
+                "reference": "cbc30a31e2248bccd9ee8e8142177b617fb32e37"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/eb9571e2b082c042cc0b7e46b001cf1d84b8b73a",
-                "reference": "eb9571e2b082c042cc0b7e46b001cf1d84b8b73a",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/cbc30a31e2248bccd9ee8e8142177b617fb32e37",
+                "reference": "cbc30a31e2248bccd9ee8e8142177b617fb32e37",
                 "shasum": ""
             },
             "require": {
@@ -1676,7 +1733,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2013-09-04 06:17:01"
+            "time": "2013-08-21 19:09:08"
         },
         {
             "name": "twig/extensions",
@@ -1731,12 +1788,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "b5516cadf6042c11b0d54cdad4f6c5fb25d2ec40"
+                "reference": "fcf007e9a2e6c65594360ae7fa3c410ae8d56a11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/b5516cadf6042c11b0d54cdad4f6c5fb25d2ec40",
-                "reference": "b5516cadf6042c11b0d54cdad4f6c5fb25d2ec40",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/fcf007e9a2e6c65594360ae7fa3c410ae8d56a11",
+                "reference": "fcf007e9a2e6c65594360ae7fa3c410ae8d56a11",
                 "shasum": ""
             },
             "require": {
@@ -1772,7 +1829,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2013-09-04 06:20:08"
+            "time": "2013-08-07 12:53:34"
         }
     ],
     "packages-dev": [

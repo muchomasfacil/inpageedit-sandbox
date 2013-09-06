@@ -21,9 +21,10 @@ class AppKernel extends Kernel
             new MuchoMasFacil\InPageEditBundle\MuchoMasFacilInPageEditBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
 
-            // Required by the sandbox
+            // Required by MuchoMasFacilWysiwygBundle
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new MuchoMasFacil\WysiwygBundle\MuchoMasFacilWysiwygBundle(),
-            
+
 
         );
 
