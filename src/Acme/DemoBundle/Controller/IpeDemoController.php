@@ -48,4 +48,11 @@ class IpeDemoController extends Controller
 
         return $this->render('AcmeDemoBundle:IpeDemo:odgsmec.html.twig', $render_vars);
     }
+
+    public function wysiwygAction()
+    {
+        $render_vars = array();
+        
+        return $this->render('AcmeDemoBundle:IpeDemo:wysiwyg.html.twig', $render_vars);
+    }
 }

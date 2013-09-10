@@ -10,6 +10,7 @@ web/assetic/*
 web/css/*
 web/js/*
 web/uploads/*
+web/components/*
 
 # -- Composer -----------------------------------------
 composer.phar

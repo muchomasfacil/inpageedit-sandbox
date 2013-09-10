@@ -14,6 +14,37 @@
         {
             "type": "vcs",
             "url": "git@github.com:muchomasfacil/WysiwygBundle.git"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "component/elfinder",
+                "type": "component",
+                "version": "dev-master",
+                "source": {
+                    "url": "git@github.com:Studio-42/elFinder.git",
+                    "type": "git",
+                    "reference": "2.x"
+                },
+                "require": {
+                    "robloach/component-installer": "*"
+                },
+                "extra": {
+                    "component": {
+                        "scripts": [
+                            "js/*.js",
+                            "js/*/*.js"
+                        ],
+                        "styles" : [
+                            "css/*.css"
+                        ],
+                        "files": [
+                            "img/*.png",
+                            "img/*.gif"                                                        
+                        ]
+                    }
+                }
+            }
         }
     ],
     "require": {
@@ -33,7 +64,8 @@
         "muchomasfacil/InPageEditBundle": "dev-master",
         "stof/doctrine-extensions-bundle": "~1.1@dev", 
 
-        "muchomasfacil/WysiwygBundle": "dev-master"
+        "muchomasfacil/WysiwygBundle": "dev-master",
+        "component/elfinder": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
@@ -52,7 +84,8 @@
         ]
     },
     "config": {
-        "bin-dir": "bin"
+        "bin-dir": "bin",
+        "component-dir": "web/components"
     },
     "minimum-stability": "dev",
     "extra": {

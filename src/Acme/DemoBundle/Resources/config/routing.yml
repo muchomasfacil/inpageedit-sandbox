@@ -26,6 +26,11 @@ _ipe_demo_odgsmec:
     pattern:  /ipe_demo/odgsmec
     defaults: { _controller: AcmeDemoBundle:IpeDemo:odgsmec }
 
+_ipe_demo_wysiwyg:
+    pattern:  /ipe_demo/wysiwyg
+    defaults: { _controller: AcmeDemoBundle:IpeDemo:wysiwyg }
+
+
 _ipe_demo_odgsmec_without_controller:
     path: /ipe_demo/odgsmec_without_controller
     defaults:

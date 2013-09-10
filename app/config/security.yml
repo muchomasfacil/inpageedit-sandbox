@@ -50,6 +50,6 @@ security:
 
     access_control:
         - { path: ^/demo/secured/hello/admin/, roles: ROLE_ADMIN }        
-        - { path: ^/efconnect, role: ROLE_IPE_EDITOR }
-        - { path: ^/elfinder, role: ROLE_IPE_EDITOR }
+        - { path: ^/_wysiwyg*, role: ROLE_IPE_EDITOR }
+        - { path: ^/_elfinder*, role: ROLE_IPE_EDITOR }
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }

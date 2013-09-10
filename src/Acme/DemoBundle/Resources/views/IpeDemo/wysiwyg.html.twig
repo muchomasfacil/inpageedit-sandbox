@@ -1,0 +1,42 @@
+{% extends "AcmeDemoBundle:IpeDemo:layout.html.twig" %}
+
+{% block content %}
+    <h1>WysiwygBundle demo page</h1>
+
+    <h2>A ckeditor4 from textarea</h2>
+        <textarea data-w-flavor="ckeditor4_default" name="ckeditor">&lt;p&gt;Initial value.&lt;/p&gt;</textarea>
+        <hr>
+    <h2>A tinymce4 from textarea</h2>
+        <textarea data-w-flavor="tinymce4_default" name="tinymce">&lt;p&gt;Initial value.&lt;/p&gt;</textarea>
+        <hr>
+    <h2>A el finder input</h2>
+
+
+        <hr>    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.2/ckeditor.js"></script>
+    <script src="{{ asset('http://rawgithub.com/ckeditor/ckeditor-releases/stable/standard/adapters/jquery.js')}}"></script>
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+
+    <script>
+        //It's as simple as calling: Routing.generate('route_id', /* your params */).
+
+        //Or if you want to generate absolute Url: Routing.generate('route_id', /* your params */, true).
+
+        $(function() {
+
+            $('[data-w-flavor]').each(function () {
+                var selector = '[name=' + $(this).attr('name') + ']';
+                var flavor = $(this).attr('data-w-flavor');
+                $.getScript(Routing.generate('_wysiwyg', {'selector': selector, 'flavor_key': flavor, 'loquesea': 'mas parametros'}));
+            });
+
+        });
+    </script>
+
+    {{ parent() }}
+{% endblock %}
+
+{% set code = code(_self) %}

@@ -31,10 +31,6 @@
 
 {% block content %}
 
-<textarea data-w-flavor="tinymce4_default" name="tinymce">&lt;p&gt;Initial value.&lt;/p&gt;</textarea>
-
-<textarea data-w-flavor="ckeditor4_default" name="ckeditor">&lt;p&gt;Initial value.&lt;/p&gt;</textarea>
-
 {% if is_granted('ROLE_IPE_EDITOR') %}
 {# it is not required the use of assetic but as we get a bunch of external libraries... #}
     {% javascripts

@@ -13,7 +13,7 @@
     </ul>
     
     <h2>InPageEditBundle demos</h2>
-    <ul id="demo-list">
+    <ul>
         <li>
                 Using orm_doctrine_mapped_entity (alias: odme) to manage a collection of standard entities<br>
                 <a href="{{ path('_ipe_demo_odme') }}">Go</a>  <a href="{{ path('_ipe_demo_odme_without_controller') }}">Go (without controller!!)</a>
@@ -24,5 +24,12 @@
                 <a href="{{ path('_ipe_demo_odgsmec') }}">Go</a>  <a href="{{ path('_ipe_demo_odgsmec_without_controller') }}">Go (without controller!!)</a>
         </li>
     
+    </ul>
+    <h3>WysiwygBundle demos</h3>
+    <ul>
+        <li><a href="{{ path('_ipe_demo_wysiwyg') }}" >Wysiwyg and el finder in forms</a></li>
+    </ul>
+    <ul>
+        <li><a href="{{ path('_elfinder_standalone') }}" target="_blank" onClick="window.open(this.href, this.target, 'width=600,height=300'); return false;">ElFinder popup (images only)</a></li>
     </ul>
 {% endblock %}
