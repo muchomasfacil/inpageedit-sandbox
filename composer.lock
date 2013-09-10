@@ -1065,12 +1065,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/muchomasfacil/InPageEditBundle.git",
-                "reference": "ca3df6f4de317d788619398de663af03b151deeb"
+                "reference": "ed2f93d95b58710d509c2d49353e303c3d15fd9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muchomasfacil/InPageEditBundle/zipball/ca3df6f4de317d788619398de663af03b151deeb",
-                "reference": "ca3df6f4de317d788619398de663af03b151deeb",
+                "url": "https://api.github.com/repos/muchomasfacil/InPageEditBundle/zipball/ed2f93d95b58710d509c2d49353e303c3d15fd9d",
+                "reference": "ed2f93d95b58710d509c2d49353e303c3d15fd9d",
                 "shasum": ""
             },
             "require": {
@@ -1100,7 +1100,7 @@
                 "source": "https://github.com/muchomasfacil/InPageEditBundle/tree/master",
                 "issues": "https://github.com/muchomasfacil/InPageEditBundle/issues"
             },
-            "time": "2013-09-06 07:48:45"
+            "time": "2013-09-10 16:52:24"
         },
         {
             "name": "muchomasfacil/WysiwygBundle",
@@ -1109,12 +1109,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/muchomasfacil/WysiwygBundle.git",
-                "reference": "38c0418b25195c6178a1e1800c54994b33ce5693"
+                "reference": "b4ad3e812506f0773637522d37f3071ed02c41b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muchomasfacil/WysiwygBundle/zipball/38c0418b25195c6178a1e1800c54994b33ce5693",
-                "reference": "38c0418b25195c6178a1e1800c54994b33ce5693",
+                "url": "https://api.github.com/repos/muchomasfacil/WysiwygBundle/zipball/b4ad3e812506f0773637522d37f3071ed02c41b8",
+                "reference": "b4ad3e812506f0773637522d37f3071ed02c41b8",
                 "shasum": ""
             },
             "require": {
@@ -1140,7 +1140,7 @@
                 "source": "https://github.com/muchomasfacil/WysiwygBundle/tree/master",
                 "issues": "https://github.com/muchomasfacil/WysiwygBundle/issues"
             },
-            "time": "2013-09-09 17:34:45"
+            "time": "2013-09-10 16:52:50"
         },
         {
             "name": "psr/log",
