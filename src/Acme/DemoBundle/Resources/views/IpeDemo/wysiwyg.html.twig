@@ -4,13 +4,13 @@
     <h1>WysiwygBundle demo page</h1>
 
     <h2>A ckeditor4 from textarea</h2>
-        <textarea data-w-flavor="ckeditor4_default" name="ckeditor">&lt;p&gt;Initial value.&lt;/p&gt;</textarea>
+        <textarea data-w-flavor="ckeditor4_elfinder" name="ckeditor">&lt;p&gt;Initial value.&lt;/p&gt;</textarea>
         <hr>
     <h2>A tinymce4 from textarea</h2>
-        <textarea data-w-flavor="tinymce4_default" name="tinymce">&lt;p&gt;Initial value.&lt;/p&gt;</textarea>
+        <textarea data-w-flavor="tinymce4_elfinder" name="tinymce">&lt;p&gt;Initial value.&lt;/p&gt;</textarea>
         <hr>
     <h2>A el finder input</h2>
-
+        <div id="elfinder" data-ef-connector="images"></div>
 
         <hr>    
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -19,6 +19,25 @@
     <script src="{{ asset('http://rawgithub.com/ckeditor/ckeditor-releases/stable/standard/adapters/jquery.js')}}"></script>
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+{% javascripts 
+    'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js'
+    'components/elfinder/js/elFinder.js'
+    'components/elfinder/js/elFinder.version.js'
+    'components/elfinder/js/jquery.elfinder.js'
+    'components/elfinder/js/elFinder.resources.js'
+    'components/elfinder/js/elFinder.options.js'
+    'components/elfinder/js/elFinder.history.js'
+    'components/elfinder/js/elFinder.command.js'
+    'components/elfinder/js/ui/*'
+    'components/elfinder/js/commands/*'
+    'components/elfinder/js/i18n/*'
+    'components/elfinder/js/proxy/*'
+    output='components/elfinder/js_compiled/elfinder.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{{ include('MuchoMasFacilWysiwygBundle:ElFinder:stylesheets.html.twig') }}
+
 
     <script>
         //It's as simple as calling: Routing.generate('route_id', /* your params */).
@@ -27,10 +46,72 @@
 
         $(function() {
 
+
+/*
+if (typeof tinymce == 'undefined') {
+    alert('You must load the tinymce .js file in your page. http://www.tinymce.com/');
+}
+else {
+    tinymce.init({
+        selector: "[name=tinymce]"
+        ,plugins: [
+            "advlist autolink lists link image charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table contextmenu paste"
+        ]
+        ,toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+        ,file_browser_callback: function(field_name, url, type, win) { 
+            switch(type)
+            {
+            case 'image':
+              var file = '\x2Fapp_dev.php\x2F_elfinder_standalone\x2Ftinymce4';
+              break;
+            case 'flash':
+              var file = '\x2Fapp_dev.php\x2F_elfinder_standalone\x2Ftinymce4\x2Fflash';
+              break;
+            default:
+              var file = '\x2Fapp_dev.php\x2F_elfinder_standalone\x2Ftinymce4\x2Ffiles';
+            }
+
+            tinymce.activeEditor.windowManager.open({
+                file: file,
+                title: 'elFinder 2.0',
+                width: 800,  
+                height: 300,
+                resizable: 'no'
+            }, {
+                setUrl: function (url) {
+                  win.document.getElementById(field_name).value = url;
+                }
+            });
+            return false;
+        }
+    });
+}
+*/
+
+
+
+
+
             $('[data-w-flavor]').each(function () {
                 var selector = '[name=' + $(this).attr('name') + ']';
-                var flavor = $(this).attr('data-w-flavor');
-                $.getScript(Routing.generate('_wysiwyg', {'selector': selector, 'flavor_key': flavor, 'loquesea': 'mas parametros'}));
+                var flavor_key = $(this).attr('data-w-flavor');
+                var route = Routing.generate('_wysiwyg', {'selector': selector, 'flavor_key': flavor_key, 'loquesea': 'mas parametros'});                
+                $.getScript(route);
+            });
+
+            $('[data-ef-connector]').each(function () {
+                var selector = '#' + $(this).attr('id');
+                if (typeof $(this).attr('data-ef-flavor') === "undefined") {
+                    var flavor_key = 'default';
+                }
+                else {
+                    var flavor_key = $(this).attr('data-ef-flavor');
+                }
+                var connector_key = $(this).attr('data-ef-connector');                
+                var route = Routing.generate('_elfinder', {'selector': selector, 'elfinder_flavor_key': flavor_key, 'elfinder_connector_key': connector_key, 'other_params': '/uploads/loquesea'});
+                $.getScript(route);
             });
 
         });
