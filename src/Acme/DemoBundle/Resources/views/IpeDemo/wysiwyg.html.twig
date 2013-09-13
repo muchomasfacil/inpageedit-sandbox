@@ -10,8 +10,10 @@
         <textarea data-w-flavor="tinymce4_elfinder" name="tinymce">&lt;p&gt;Initial value.&lt;/p&gt;</textarea>
         <hr>
     <h2>A el finder input</h2>
+        <input data-ef-input-connector="images" type="text" name="file_browser" value="loque sea">
+        <hr>
+    <h2>elFinder inline</h2>
         <div id="elfinder" data-ef-connector="images"></div>
-
         <hr>    
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
@@ -46,58 +48,10 @@
 
         $(function() {
 
-
-/*
-if (typeof tinymce == 'undefined') {
-    alert('You must load the tinymce .js file in your page. http://www.tinymce.com/');
-}
-else {
-    tinymce.init({
-        selector: "[name=tinymce]"
-        ,plugins: [
-            "advlist autolink lists link image charmap print preview anchor",
-            "searchreplace visualblocks code fullscreen",
-            "insertdatetime media table contextmenu paste"
-        ]
-        ,toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-        ,file_browser_callback: function(field_name, url, type, win) { 
-            switch(type)
-            {
-            case 'image':
-              var file = '\x2Fapp_dev.php\x2F_elfinder_standalone\x2Ftinymce4';
-              break;
-            case 'flash':
-              var file = '\x2Fapp_dev.php\x2F_elfinder_standalone\x2Ftinymce4\x2Fflash';
-              break;
-            default:
-              var file = '\x2Fapp_dev.php\x2F_elfinder_standalone\x2Ftinymce4\x2Ffiles';
-            }
-
-            tinymce.activeEditor.windowManager.open({
-                file: file,
-                title: 'elFinder 2.0',
-                width: 800,  
-                height: 300,
-                resizable: 'no'
-            }, {
-                setUrl: function (url) {
-                  win.document.getElementById(field_name).value = url;
-                }
-            });
-            return false;
-        }
-    });
-}
-*/
-
-
-
-
-
             $('[data-w-flavor]').each(function () {
                 var selector = '[name=' + $(this).attr('name') + ']';
                 var flavor_key = $(this).attr('data-w-flavor');
-                var route = Routing.generate('_wysiwyg', {'selector': selector, 'flavor_key': flavor_key, 'loquesea': 'mas parametros'});                
+                var route = Routing.generate('_wysiwyg', {'selector': selector, 'flavor_key': flavor_key});                
                 $.getScript(route);
             });
 
@@ -110,8 +64,19 @@ else {
                     var flavor_key = $(this).attr('data-ef-flavor');
                 }
                 var connector_key = $(this).attr('data-ef-connector');                
-                var route = Routing.generate('_elfinder', {'selector': selector, 'elfinder_flavor_key': flavor_key, 'elfinder_connector_key': connector_key, 'other_params': '/uploads/loquesea'});
+                var route = Routing.generate('_elfinder', {'selector': selector, 'elfinder_flavor_key': flavor_key, 'elfinder_connector_key': connector_key});
                 $.getScript(route);
+            });
+
+            $('[data-ef-input-connector]').each(function () {
+                var connector_key = $(this).attr('data-ef-input-connector');                
+                var route = Routing.generate('_elfinder_standalone', {'elfinder_flavor_key': 'input', 'elfinder_connector_key': connector_key, 'input_name': $(this).attr('name')});
+                var button = $('<button class="btn"><i class="icon-folder-open"></i></button>')
+                    .click(function() {
+                        window.open(route, '_elfinder', 'width=800,height=420'); 
+                        return false;
+                    });
+                $(this).after(button);                    
             });
 
         });
