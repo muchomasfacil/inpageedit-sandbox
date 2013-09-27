@@ -21,23 +21,9 @@
     <script src="{{ asset('http://rawgithub.com/ckeditor/ckeditor-releases/stable/standard/adapters/jquery.js')}}"></script>
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
-{% javascripts 
-    'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js'
-    'components/elfinder/js/elFinder.js'
-    'components/elfinder/js/elFinder.version.js'
-    'components/elfinder/js/jquery.elfinder.js'
-    'components/elfinder/js/elFinder.resources.js'
-    'components/elfinder/js/elFinder.options.js'
-    'components/elfinder/js/elFinder.history.js'
-    'components/elfinder/js/elFinder.command.js'
-    'components/elfinder/js/ui/*'
-    'components/elfinder/js/commands/*'
-    'components/elfinder/js/i18n/*'
-    'components/elfinder/js/proxy/*'
-    output='components/elfinder/js_compiled/elfinder.js'
-    %}
-    <script type="text/javascript" src="{{ asset_url }}"></script>
-{% endjavascripts %}
+
+{{ include('MuchoMasFacilWysiwygBundle:ElFinder:javascripts.html.twig') }}
+
 {{ include('MuchoMasFacilWysiwygBundle:ElFinder:stylesheets.html.twig') }}
 
 
